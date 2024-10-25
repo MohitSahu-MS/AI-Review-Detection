@@ -23,12 +23,7 @@ def top_keys(dictionary, n=100):
 def synonym_attack_dict(dictionary):
     """Function for figuring out words to be replaced"""
 
-    # Sort the dictionary by values in descending order
-    sorted_items = sorted(dictionary.items(), key=lambda x: x[1], reverse=True)
-
-    # Extract keys corresponding to the top n values
-    n = 100
-    top_keys_list = [item[0] for item in sorted_items[:n]]
+    top_keys_list = top_keys(dictionary,n=100)
     
     # for the top keys find out their synonyms
     syn_attack = {}
